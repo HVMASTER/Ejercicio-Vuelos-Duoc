@@ -12,15 +12,21 @@ while opcionM != 4:
     print("-"*70)
     
 
-    if opcionM == 1 and opcionM >= 31 or opcionM <= 42:
-        print("Usted ha escogido el tipo de asiento VIP")
-        cantAsiento = int(input("Ingrese cuantos asientos VIP reservara: "))
-        if cantAsiento > 0:
-            print("Usted ha reservado", cantAsiento, "asiento VIP")
+    if opcionM == 1:
+        numAsiento = int(input("Ingrese el numero de asiento que desea reservar: "))
 
-    else:
-        if opcionM == 1 and opcionM < 31 or opcionM > 0:
-            print("Usted ha escogido el tipo de asiento NORMAL")
+        if numAsiento >= 31 and numAsiento <= 42:
+            print("Usted ha escogido el tipo de asiento VIP")
+            cantAsientoV = int(input("Ingrese cuantos asientos VIP reservara: "))
+            if cantAsientoV > 0:
+                print("Usted ha reservado", cantAsientoV, "asientos VIP")
+
+        else:
+            if numAsiento > 0 and numAsiento <= 30:
+                print("Usted ha escogido el tipo de asiento NORMAL")
+                cantAsientoN = int(input("Indique cuantos asientos NORMALES reservara: "))
+                if cantAsientoN > 0:
+                    print("Usted ha reservado", cantAsientoN, "asientos NORMALES")
 
     if opcionM == 2:
         print("")
