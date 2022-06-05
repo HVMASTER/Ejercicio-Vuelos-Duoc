@@ -1,6 +1,19 @@
 import numpy as np
 import random as rd
 flag = True
+flag2 = True
+precioN = 78900
+precioV = 240000
+
+def calculodescNormal(precioN,descuentoN):
+  descuentoN = precioN * 0.15
+  totalN = precioN - descuentoN
+  return totalN
+
+def calculodescVip(precioV,descuentoV):
+  descuentoV = precioV * 0.15
+  totalV = precioV - descuentoV
+  return totalV
 
 loteA = [[1,2,3],
          [7,8,9],
@@ -68,11 +81,39 @@ while flag:
 
 
   if opcionM == 2:
-      print("Para realizar la compra de un boleto debe ingresar los siguientes datos: ")
+    while flag2:
+      print("\t\tMENU COMPRAR ASIENTOS ")
       nombrePasajero = input("Ingrese su nombre:\t").upper()
-      rutPasajero = input("Ingrese su rut:\t\t")
-      telefonoPasajero = int(input("Ingrese su N° celular:\t"))
-      bancoPasajero = input("Ingrese nombre de su banco:\t").upper()
+      rutPasajero = int(input("Ingrese su rut sin digito verificador:\t\t"))
+      if rutPasajero > 5000000 and rutPasajero < 99999999:
+        telefonoPasajero = int(input("Ingrese su N° celular(9 digitos):\t"))
+        if telefonoPasajero > 0 and telefonoPasajero < 999999999:
+            bancoPasajero = input("Ingrese nombre de su banco:\t").upper()
+            numeroAsiento = int(input("Ingrese el numero del asiento que desea comprar:\t"))
+        else:
+          print("Numero de celular no valido")
+          volver = input("Desea volver al MENU de compra?(si/no)").lower().strip()
+          if volver == "si":
+              print("")
+              flag2 = True
+          else:
+            if volver == "no":
+                print("")
+                flag2 = False
+        
+      else:
+        print("rut no valido")
+        volver = input("Desea volver al MENU de compra?(si/no)").lower().strip()
+        if volver == "si":
+            print("")
+            flag2 = True
+        else:
+          if volver == "no":
+              print("")
+              flag2 = False
+      
+      
+
 
   if opcionM == 3:
       print("")
