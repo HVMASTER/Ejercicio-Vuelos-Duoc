@@ -5,41 +5,38 @@ flag2 = True
 precioN = 78900
 precioV = 240000
 
-def calculodescNormal(precioN,descuentoN):
+def calculodescNormal(precioN):
   descuentoN = precioN * 0.15
   totalN = precioN - descuentoN
   return totalN
 
-def calculodescVip(precioV,descuentoV):
+def calculodescVip(precioV):
   descuentoV = precioV * 0.15
   totalV = precioV - descuentoV
   return totalV
 
-loteA = [[1,2,3],
-         [7,8,9],
-         [13,14,15],
-         [19,20,21],
-         [25,26,27]]
+Normales = [[1,2,3],
+            [4,5,6],
+            [7,8,9],
+            [10,11,12],
+            [13,14,15],
+            [16,17,18],
+            [19,20,21],
+            [22,23,24],
+            [25,26,27],
+            [28,29,30]]
+            
+ladoA = np.array(Normales)
 
-ladoA = np.array(loteA)
+vip = [[31,32,33],
+       [34,35,36],
+       [37,38,39],
+       [40,41,42]]
+       
+       
+ladoB = np.array(vip)
 
-loteB = [[4,5,6],
-         [10,11,12],
-         [16,17,18],
-         [22,23,24],
-         [28,29,30]]
 
-ladoB = np.array(loteB)
-
-loteC = [[31,32,33],
-         [37,38,39]]
-
-ladoC = np.array(loteC)
-
-loteD = [[34,35,36],
-         [40,41,42]]
-
-ladoD = np.array(loteD)
 
 
 while flag:
@@ -64,12 +61,9 @@ while flag:
         print("TIPO NORMAL:")
         print(ladoA)
         print("-"*10)
-        print(ladoB)
-        print("-"*10)
         print("TIPO VIP:")
-        print(ladoC)
-        print("-"*10)
-        print(ladoD)
+        print(ladoB)
+
         volver = input("Desea volver al MENU principal?(si/no)").lower().strip()
         if volver == "si":
             print("")
@@ -89,7 +83,33 @@ while flag:
         telefonoPasajero = int(input("Ingrese su N° celular(9 digitos):\t"))
         if telefonoPasajero > 0 and telefonoPasajero < 999999999:
             bancoPasajero = input("Ingrese nombre de su banco:\t").upper()
+            print("ASIENTOS DISPONIBLES TIPO NORMAL")
+
+            for i in Normales:           
+              print(i)
+              print("-"*12)
+            print("ASIENTOS DISPONIBLES TIPO VIP")
+            for l in vip:
+              print(l)
+              print("-"*12)
+                
+
             numeroAsiento = int(input("Ingrese el numero del asiento que desea comprar:\t"))
+            posicion = numeroAsiento - 1
+            if posicion >= 0 and posicion < 31:
+               print("Su asiento es de clase Normal")
+               if Normales[posicion] == True:
+                 print("Su asiento es: ",numeroAsiento)
+
+               else:
+                 print("Este asiento esta ocupado, Vuelva a intentar") 
+
+            else:
+              if posicion >= 31 and posicion <= 42:
+                print("Su asiento es de clase VIP")
+
+              else:
+                print("Solo puede escoger asientos del 1 al 42")
         else:
           print("Numero de celular no valido")
           volver = input("Desea volver al MENU de compra?(si/no)").lower().strip()
