@@ -5,7 +5,7 @@ print("*"*50)
 opcionM = int(input("\t\tIngrese una opcion: "))
 while opcionM != 4:
     if opcionM == 1:
-        print("")
+        print("hola")
 
     if opcionM == 2:
         print("")
