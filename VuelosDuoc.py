@@ -25,21 +25,52 @@ Normales = [[1,2,3],
             [22,23,24],
             [25,26,27],
             [28,29,30]]
-            
+
 ladoA = np.array(Normales)
 
 vip = [[31,32,33],
        [34,35,36],
        [37,38,39],
        [40,41,42]]
-       
-       
+
+
 ladoB = np.array(vip)
+asiento_ocupado = False
 
+def calculoPosicion(n_asiento):
+  if n_asiento == 1:
+    if Normales[0][0] == 'X':
+      return True
+    else:
+      return False
 
+  if n_asiento == 2:
+    if Normales[0][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 3:
+    if Normales[0][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 4:
+    if Normales[1][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 5:
+    if Normales[1][1] == 'X':
+      return True
+    else:
+      return False
 
 
 while flag:
+  print('')
   print("\t\tMENU AEREOLINEAS DUOC")
   print("*"*50)
   print("1.-Ver asientos disponibles\n2.-Comprar asientos\n3.-Anular vuelo\n4.-Modificar datos de pasajeros\n5.-Salir")
@@ -73,7 +104,6 @@ while flag:
               print("")
               flag = False
 
-
   if opcionM == 2:
     while flag2:
       print("\t\tMENU COMPRAR ASIENTOS ")
@@ -83,33 +113,39 @@ while flag:
         telefonoPasajero = int(input("Ingrese su N° celular(9 digitos):\t"))
         if telefonoPasajero > 0 and telefonoPasajero < 999999999:
             bancoPasajero = input("Ingrese nombre de su banco:\t").upper()
-            print("ASIENTOS DISPONIBLES TIPO NORMAL")
 
-            for i in Normales:           
-              print(i)
-              print("-"*12)
+            print("ASIENTOS DISPONIBLES TIPO NORMAL")
+            print('')
+            for i in Normales:
+                  print(i)
+                  print("-"*12)
             print("ASIENTOS DISPONIBLES TIPO VIP")
+            print('')
             for l in vip:
               print(l)
               print("-"*12)
-                
 
             numeroAsiento = int(input("Ingrese el numero del asiento que desea comprar:\t"))
-            posicion = numeroAsiento - 1
-            if posicion >= 0 and posicion < 31:
-               print("Su asiento es de clase Normal")
-               if Normales[posicion] == True:
-                 print("Su asiento es: ",numeroAsiento)
+            calculoPosicion(numeroAsiento)
+            while calculoPosicion(numeroAsiento) == True:
+              print('Asiento N°:', numeroAsiento, ' Ocupado!!')
+              numeroAsiento = int(input("Ingrese el numero del asiento que desea comprar:\t"))
+              calculoPosicion(numeroAsiento)
 
-               else:
-                 print("Este asiento esta ocupado, Vuelva a intentar") 
+            if numeroAsiento >= 0 and numeroAsiento < 31:
+                print("Su asiento es de clase Normal")
 
+                for fila in Normales:
+                  for asiento in fila:
+                    if asiento == numeroAsiento:
+                        ind_asiento = fila.index(asiento)
+                        fila[ind_asiento] = "X"
+
+            if numeroAsiento >= 31 and numeroAsiento <= 42:
+              print("Su asiento es de clase VIP")
             else:
-              if posicion >= 31 and posicion <= 42:
-                print("Su asiento es de clase VIP")
+              print("Solo puede escoger asientos del 1 al 42")
 
-              else:
-                print("Solo puede escoger asientos del 1 al 42")
         else:
           print("Numero de celular no valido")
           volver = input("Desea volver al MENU de compra?(si/no)").lower().strip()
@@ -120,7 +156,7 @@ while flag:
             if volver == "no":
                 print("")
                 flag2 = False
-        
+
       else:
         print("rut no valido")
         volver = input("Desea volver al MENU de compra?(si/no)").lower().strip()
@@ -131,9 +167,6 @@ while flag:
           if volver == "no":
               print("")
               flag2 = False
-      
-      
-
 
   if opcionM == 3:
       print("")
@@ -142,4 +175,3 @@ while flag:
       print("")
 
 print("Hasta pronto")
-
