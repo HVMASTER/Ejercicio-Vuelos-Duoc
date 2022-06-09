@@ -1,5 +1,5 @@
 import numpy as np
-import random as rd
+
 flag = True
 flag2 = True
 precioN = 78900
@@ -34,9 +34,6 @@ vip = [[31,32,33],
        [40,41,42]]
 
 
-ladoB = np.array(vip)
-asiento_ocupado = False
-
 def calculoPosicion(n_asiento):
   if n_asiento == 1:
     if Normales[0][0] == 'X':
@@ -67,6 +64,401 @@ def calculoPosicion(n_asiento):
       return True
     else:
       return False
+  if n_asiento == 6:
+    if Normales[1][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 7:
+    if Normales[2][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 8:
+    if Normales[2][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 9:
+    if Normales[2][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 10:
+    if Normales[3][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 11:
+    if Normales[3][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 12:
+    if Normales[3][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 13:
+    if Normales[4][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 14:
+    if Normales[4][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 15:
+    if Normales[4][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 16:
+    if Normales[5][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 17:
+    if Normales[5][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 18:
+    if Normales[5][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 19:
+    if Normales[6][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 20:
+    if Normales[6][1] == 'X':
+      return True
+    else:
+      return False
+  if n_asiento == 21:
+    if Normales[6][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 22:
+    if Normales[7][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 23:
+    if Normales[7][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 24:
+    if Normales[7][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 25:
+    if Normales[8][0] == 'X':
+      return True
+    else:
+      return False
+  if n_asiento == 26:
+    if Normales[8][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 27:
+    if Normales[8][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 28:
+    if Normales[9][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 29:
+    if Normales[9][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 30:
+    if Normales[9][2] == 'X':
+      return True
+    else:
+      return False
+
+  ### ASIENTOS VIP
+
+  if n_asiento == 31:
+    if vip[0][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 32:
+    if vip[0][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 33:
+    if vip[0][2] == 'X':
+      return True
+    else:
+      return False
+  if n_asiento == 34:
+    if vip[1][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 35:
+    if vip[1][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 36:
+    if vip[1][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 37:
+    if vip[2][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 38:
+    if vip[2][1] == 'X':
+      return True
+    else:
+      return False
+  if n_asiento == 39:
+    if vip[2][2] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 40:
+    if vip[3][0] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 41:
+    if vip[3][1] == 'X':
+      return True
+    else:
+      return False
+
+  if n_asiento == 42:
+    if vip[3][2] == 'X':
+      return True
+    else:
+      return False
+
+
+def EncuentraPosicion(n_asiento):
+  if n_asiento == 1:
+    Normales[0][0] = 1
+    return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 2:
+    Normales[0][1] = 2
+    return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 3:
+    Normales[0][2] = 3
+    return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 4:
+   Normales[1][0] = 4
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 5:
+   Normales[1][1] = 5
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 6:
+   Normales[1][2] = 6
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 7:
+   Normales[2][0] = 7
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 8:
+   Normales[2][1] = 8
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 9:
+   Normales[2][2] = 9
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 10:
+   Normales[3][0] = 10
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 11:
+   Normales[3][1] = 11
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 12:
+   Normales[3][2] = 12
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 13:
+   Normales[4][0] = 13
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 14:
+   Normales[4][1] = 14
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 15:
+   Normales[4][2] = 15
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 16:
+   Normales[5][0] = 16
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 17:
+   Normales[5][1] = 17
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 18:
+   Normales[5][2] = 18
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 19:
+   Normales[6][0] = 19
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 20:
+   Normales[6][1] = 20
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 21:
+   Normales[6][2] = 21
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 22:
+   Normales[7][0] = 22
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 23:
+   Normales[7][1] = 23
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 24:
+   Normales[7][2] = 24
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 25:
+   Normales[8][0] = 25
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 26:
+   Normales[8][1] = 26
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 27:
+   Normales[8][2] = 27
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 28:
+   Normales[9][0] = 28
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 29:
+   Normales[9][1] = 29
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 30:
+   Normales[9][2] = 30
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+   ### ASIENTOS VIP
+
+  if n_asiento == 31:
+   vip[0][0] == 31
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 32:
+   vip[0][1] == 32
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 33:
+   vip[0][2] == 33
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 34:
+   vip[1][0] == 34
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 35:
+   vip[1][1] == 35
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 36:
+   vip[1][2] == 36
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 37:
+   vip[2][0] == 37
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 38:
+   vip[2][1] == 38
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 39:
+   vip[2][2] == 39
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 40:
+   vip[3][0] == 40
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 41:
+   vip[3][1] == 41
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+  if n_asiento == 42:
+   vip[3][2] == 42
+   return print('Asiento N°', n_asiento, ' Anulado..')
+
+
+ladoB = np.array(vip)
+asiento_ocupado = False
 
 
 while flag:
@@ -105,6 +497,7 @@ while flag:
               flag = False
 
   if opcionM == 2:
+    flag2 = True
     while flag2:
       print("\t\tMENU COMPRAR ASIENTOS ")
       nombrePasajero = input("Ingrese su nombre:\t").upper()
@@ -132,7 +525,7 @@ while flag:
               numeroAsiento = int(input("Ingrese el numero del asiento que desea comprar:\t"))
               calculoPosicion(numeroAsiento)
 
-            if numeroAsiento >= 0 and numeroAsiento < 31:
+            if numeroAsiento >= 0 and numeroAsiento < 42:
                 print("Su asiento es de clase Normal")
 
                 for fila in Normales:
@@ -141,10 +534,19 @@ while flag:
                         ind_asiento = fila.index(asiento)
                         fila[ind_asiento] = "X"
 
-            if numeroAsiento >= 31 and numeroAsiento <= 42:
-              print("Su asiento es de clase VIP")
+                if numeroAsiento >= 31 and numeroAsiento <= 42:
+                  print("Su asiento es de clase VIP")
             else:
               print("Solo puede escoger asientos del 1 al 42")
+
+            volver = input("Desea volver al MENU?(si/no)").lower().strip()
+            if volver == "si":
+                print("")
+                flag2 = False
+            else:
+              if volver == "no":
+                  print("")
+                  flag2 = True
 
         else:
           print("Numero de celular no valido")
@@ -169,7 +571,15 @@ while flag:
               flag2 = False
 
   if opcionM == 3:
-      print("")
+    print('')
+    print("Indique el numero del asiento que desea anular: ")
+    print('')
+    anulacion = int(input("Ingrese el numero de asiento: "))
+
+    if anulacion > 0 and anulacion < 31:
+      while calculoPosicion(anulacion) == True:
+        EncuentraPosicion(anulacion)
+      print('Asiento Disponible.. !No se puede Anular¡ ')
 
   if opcionM == 4:
       print("")
